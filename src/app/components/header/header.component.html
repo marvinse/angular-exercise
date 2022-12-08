@@ -1,0 +1,11 @@
+<div class="header">
+    <h2>DotCms News Listing</h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Filter by date</mat-label>
+        <mat-select matNativeControl (selectionChange)="changeFilter($event.value)">
+            <mat-option value="today">Today</mat-option>
+            <mat-option value="yesterday">Yesterday</mat-option>
+            <mat-option value="lastweek">Last Week</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

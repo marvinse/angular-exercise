@@ -1,0 +1,11 @@
+<div class="article" *ngIf="item">
+    <figure class="article__image">
+        <!--<img [src]="url+item.imageVersion" />-->
+        <img [src]="item.imageVersion" />
+    </figure>
+    <div class="article__title">
+        <h1>{{ item.title }}</h1>
+        <span>Publised {{ item.postingDate | date }}</span>
+    </div>
+    <p class="article__content">{{ item.teaser }}</p>
+</div>

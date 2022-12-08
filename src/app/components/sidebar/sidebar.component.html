@@ -1,0 +1,18 @@
+<div class="sidebar">
+    <mat-icon class="sidebar__menubtn" aria-hidden="false" aria-label="Menu" fontIcon="menu" (click)="showMenu = !showMenu"></mat-icon>
+    <div class="sidebar__items" [@fadeInOut]="showMenu ? 'open' : 'close'">
+        <a
+            [routerLinkActive]="['sidebar__item--active']"
+            routerLink="/article/{{item.inode}}"
+            (click)="isHome = false"
+            [ngClass]="{'sidebar__item': true, 'sidebar__item--active-home': index == 0 && isHome}"
+            *ngFor="let item of items; let index = index">
+            <!--<img class="sidebar__image" [src]="url+'dA/'+item.identifier+'/270w'" />-->
+            <img class="sidebar__image" [src]="item.imageVersion">
+            <div class="sidebar__info">
+                <h3>{{ item.title }}</h3>
+                <span>{{ item.postingDate | date }}</span>
+            </div>
+        </a>
+    </div>
+</div>

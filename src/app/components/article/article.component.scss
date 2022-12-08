@@ -1,0 +1,23 @@
+.article {
+    width: 100vw;
+    &__image {
+        background-color: grey;
+        margin: 0;
+        img {
+            height: 350px;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    &__title {
+        background-color: grey;
+        color: white;
+        padding: 15px 10px;
+    }
+    &__content {
+        padding: 15px 50px;
+    }
+    @media (min-width: 720px) {
+        width: calc(100vw - 500px);
+    }
+}

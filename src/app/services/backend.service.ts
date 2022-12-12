@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, take } from 'rxjs';
 import { Item } from '../interfaces/interfaces';
 import { DataService } from './data.service';
 
@@ -24,7 +24,13 @@ export class BackendService {
   }
 
   filterBy(filterType: string) {
-    //return this.items.filter(item => item.postingDate == filterType);
-    alert(`Backend response should change filter by ${filterType}`);
+    this.myDataService.filterBy(filterType).pipe(take(1)).subscribe( (data: Item[])=> {
+      if(data.length == 0){
+        alert('No results');
+      }else {
+        this.items = data;
+        this.myItems.next(data);
+      }
+    });
   }
 }

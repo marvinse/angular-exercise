@@ -7,8 +7,8 @@
             (click)="isHome = false"
             [ngClass]="{'sidebar__item': true, 'sidebar__item--active-home': index == 0 && isHome}"
             *ngFor="let item of items; let index = index">
-            <!--<img class="sidebar__image" [src]="url+'dA/'+item.identifier+'/270w'" />-->
-            <img class="sidebar__image" [src]="item.imageVersion">
+            <img class="sidebar__image" [src]="url+'dA/'+item.identifier+'/270w'" />
+            <!--<img class="sidebar__image" [src]="item.imageVersion">-->
             <div class="sidebar__info">
                 <h3>{{ item.title }}</h3>
                 <span>{{ item.postingDate | date }}</span>
